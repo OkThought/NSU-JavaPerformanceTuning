@@ -3,7 +3,20 @@
 ### Analize bytecode of following programs
 
 #### P1
-https://github.com/OkThought/NSU-JavaPerformanceTuning/blob/d8c7fc835de4a92b04440ddd0ed7c6250e32de19/Task2/src/nsu/fit/javaperf/lab2/P1.java#L1-L11
+```java
+package nsu.fit.javaperf.lab2;
+
+public class P1 {
+    public static void main(String[] args) {
+        String s = "";
+        for (int i = 0; i < 10000; ++i) {
+            s += " " + String.valueOf(i);
+        }
+        System.out.println(s.length());
+    }
+}
+
+```
 
 #### P2
 ```java
