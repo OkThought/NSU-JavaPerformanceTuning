@@ -8,27 +8,73 @@ public class nsu.fit.javaperf.lab2.P2 {
 
   public static void main(java.lang.String[]);
     Code:
+// create new object of class (StringBuilder) identified by constant #2
        0: new           #2                  // class java/lang/StringBuilder
+
+// duplicate the created StringBuilder object reference on stack
        3: dup
+
+// call StringBuilder.constructor for the object reference from stack
        4: invokespecial #3                  // Method java/lang/StringBuilder."<init>":()V
+
+// store a StringBuilder object reference in local variable 1 (StringBuilder s)
        7: astore_1
+
+// put 0 integer on stack
        8: iconst_0
+
+// store integer value in local variable 2 (int i)
        9: istore_2
+
+// load integer value from local variable 2 (int i) on stack
       10: iload_2
+
+// load short value (10000) as an integer on stack
       11: sipush        10000
+
+// if integer (int i) is >= integer (10000) go to 37
       14: if_icmpge     37
+
+// load object reference from local variable 1 (StringBuilder s) on stack
       17: aload_1
+
+// load constant #4 (String " ") on stack
       18: ldc           #4                  // String
+
+// call instance method StringBuilder.append(String)
       20: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+// load integer value from local variable 2 (int i) on stack
       23: iload_2
+
+// call static method String.valueOf(int)
       24: invokestatic  #6                  // Method java/lang/String.valueOf:(I)Ljava/lang/String;
+
+// call instance method StringBuilder.append(String)
       27: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+// discard the top value (result of call to StringBuilder.append) from the stack
       30: pop
+
+// increment local variable (int i) value by constant (1)
       31: iinc          2, 1
+
+// go to the beginning of for loop
       34: goto          10
+
+// System.out.println(s.length());
+// get System.out
       37: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+
+// load object reference (StringBuilder s) from local variable 1
       40: aload_1
+
+// call instance method StringBuilder.length() on object reference (StringBuilder s)
       41: invokevirtual #8                  // Method java/lang/StringBuilder.length:()I
+
+// call instance method println on object reference (System.out)
       44: invokevirtual #9                  // Method java/io/PrintStream.println:(I)V
+
+// return
       47: return
 }
