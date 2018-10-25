@@ -2,7 +2,7 @@
 ## Bytecode analysis
 ### Analize bytecode of following programs
 
-#### P1
+##### `P1.java`
 ```java
 package nsu.fit.javaperf.lab2;
 
@@ -18,7 +18,7 @@ public class P1 {
 
 ```
 
-#### P2
+##### `P2.java`
 ```java
 package nsu.fit.javaperf.lab2;
 
