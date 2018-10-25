@@ -3,8 +3,7 @@
 ### Analize bytecode of following programs
 
 #### P1
-
-https://github.com/OkThought/NSU-JavaPerformanceTuning/blob/master/Task2/src/nsu/fit/javaperf/lab2/P1.java
+https://github.com/OkThought/NSU-JavaPerformanceTuning/blob/d8c7fc835de4a92b04440ddd0ed7c6250e32de19/Task2/src/nsu/fit/javaperf/lab2/P1.java#L1-L11
 
 #### P2
 ```java
