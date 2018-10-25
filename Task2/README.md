@@ -33,37 +33,43 @@ public class P2 {
 }
 ```
 
-#### `P1.class` javap output
-```
-Compiled from "P1.java"
-public class nsu.fit.javaperf.lab2.P1 {
-  public nsu.fit.javaperf.lab2.P1();
-    Code:
-       0: aload_0
-       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
-       4: return
+##### bytecode analysis of `P1`:
 
-  public static void main(java.lang.String[]);
-    Code:
-       0: ldc           #2                  // String
-       2: astore_1
-       3: iconst_0
-       4: istore_2
-       5: iload_2
-       6: sipush        10000
-       9: if_icmpge     29
-      12: aload_1
-      13: iload_2
-      14: invokestatic  #3                  // Method java/lang/String.valueOf:(I)Ljava/lang/String;
-      17: invokedynamic #4,  0              // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-      22: astore_1
-      23: iinc          2, 1
-      26: goto          5
-      29: getstatic     #5                  // Field java/lang/System.out:Ljava/io/PrintStream;
-      32: aload_1
-      33: invokevirtual #6                  // Method java/lang/String.length:()I
-      36: invokevirtual #7                  // Method java/io/PrintStream.println:(I)V
-      39: return
+```java
+package nsu.fit.javaperf.lab2;
+
+public class P1 {
+    public static void main(String[] args) {
+        
+        // 0: ldc           #2
+        // 2: astore_1
+        String s = "";
+        
+        // 3: iconst_0
+        // 4: istore_2
+        // 5: iload_2
+        // 6: sipush        10000
+        // 9: if_icmpge     29
+        for (int i = 0; i < 10000; ++i) {
+            
+            // 12: aload_1
+            // 13: iload_2
+            // 14: invokestatic  #3
+            // 17: invokedynamic #4,  0
+            // 22: astore_1
+            s += " " + String.valueOf(i);
+            
+            // 23: iinc          2, 1
+            // 26: goto          5
+        }
+        // 29: getstatic     #5
+        // 32: aload_1
+        // 33: invokevirtual #6
+        // 36: invokevirtual #7
+        System.out.println(s.length());
+        
+        // 39: return
+    }
 }
 ```
 #### `P2.class` javap output
